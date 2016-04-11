@@ -4,6 +4,7 @@
   "description": "A template that utilises React, Babel, and Browserify to build a modular front-end application",
   "scripts": {
     "gulp": "gulp",
+    "cordova": "cordova",
     "start": "gulp && http-server www"
   },
   "author": "Evan Shortiss",
@@ -14,17 +15,20 @@
     "babel-preset-react": "^6.5.0",
     "bower": "^1.7.7",
     "browserify": "^13.0.0",
-    "cordova": "^6.1.0",
+    "cordova": "^5.4.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-cli": "^1.2.1",
     "gulp-concat": "^2.6.0",
     "http-server": "^0.9.0",
+    "ios-sim": "^5.0.8",
     "lodash.map": "^4.3.0"
   },
   "dependencies": {
     "director": "^1.2.8",
+    "fastclick": "^1.0.6",
     "react": "^0.14.8",
-    "react-dom": "^0.14.8"
+    "react-dom": "^0.14.8",
+    "react-sidebar": "^2.1.1"
   }
 }

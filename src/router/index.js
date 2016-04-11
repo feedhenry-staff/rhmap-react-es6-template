@@ -9,22 +9,18 @@ import routes from './route-definitions';
  * @return {function}
  */
 export default function () {
+  // Create a router an bind our routes
   var rtr = director.Router(routes);
 
   rtr.configure({
     notfound: onNotFound,
-    strict: false,
-    on: routeChange,
+    strict: false
   });
 
-  rtr.init('/');
+  // Start of by navigating to /home
+  rtr.init('/#home');
 }
-
 
 function onNotFound () {
   window.location.href = '/#home';
-}
-
-function routeChange () {
-  console.log('routeChange', arguments);
 }

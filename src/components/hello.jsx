@@ -13,25 +13,43 @@ class HelloComponent extends React.Component {
   onHello(err, data) {
     if (err) {
       this.setState({
-        hello: 'Saying hello failed!'
+        hello: 'Saying hello failed - ' + err.msg || 'Cloud call error'
       });
     } else {
       this.setState({
-        hello: data.msg
+        cloudHello: data.msg
       });
     }
   }
+  callHelloCloud() {
+    this.setState({
+      cloudHello: 'Waiting...'
+    });
+    sayHello(this.state.name, this.onHello.bind(this));
+  }
   onChange(evt) {
     this.state.name = evt.target.value;
-    sayHello(this.state.name, this.onHello.bind(this));
+
     return true;
   }
   render() {
     return (
-      <div className="well">
-        <input type="text" placeholder="Enter a name..." onChange={this.onChange.bind(this)}></input>
+      <div>
+        <input
+          type="text"
+          placeholder="Enter a name..."
+          onChange={this.onChange.bind(this)}>
+        </input>
 
-        <p>Result: {this.state.hello}</p>
+        <center>
+          <p>Result: {this.state.cloudHello}</p>
+        </center>
+
+      <button
+        className="bottom center rh-navy-background"
+        onClick={this.callHelloCloud.bind(this)}>
+        Call Cloud
+      </button>
       </div>
     );
   }

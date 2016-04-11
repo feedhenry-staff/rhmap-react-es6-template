@@ -1,7 +1,13 @@
 'use strict';
 
-import nodeify from '../util/nodeify.js';
+import * as nodeify from '../util/nodeify.js';
 
+
+/**
+ * Calls the cloud /hello route with the given name
+ * @param  {String}   name
+ * @param  {Function} callback
+ */
 export function sayHello (name, callback) {
   let locals = ['localhost', '127.0.0.1'];
 
@@ -14,13 +20,14 @@ export function sayHello (name, callback) {
     window.$fh.cloud(
       {
         post: 'POST',
+        path: '/hello',
         data: {
           hello: name
         }
       },
       // Wrap a single callback pattern (node-style) to browser double style
       nodeify.success(callback),
-      nodeify.fail(callback)
+      nodeify.failure(callback)
     );
   }
 }

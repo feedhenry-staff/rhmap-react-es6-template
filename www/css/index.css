@@ -11,6 +11,14 @@ h3 {
   font-size: 130%;
 }
 
+h2 {
+  font-size: 140%;
+}
+
+p, li {
+  font-size: 115%;
+}
+
 p {
   padding-bottom: 1em;
 }
@@ -20,15 +28,42 @@ ul li {
   text-align: center;
 }
 
-body {
-  font-family: Overpass;
+html, body {
+  overflow: hidden;
+  font-family: Overpass !important;
 }
 
-.anchor.bottom {
-  position: absolute;
-  bottom: 1em;
-  right: 0;
+button {
+  color: white;
+  padding: 1em;
+  font-size: 120%;
+}
+
+input {
   width: 100%;
+  font-size: 80%;
+  padding: 1em 0;
+  display: block;
+}
+
+.page img {
+  display: block;
+  margin: 1em auto;
+  max-width: 100%;
+}
+.page img.small {
+  max-height: 7vh;
+}
+
+.center {
+  transform: translate(-50%, 0);
+  position: absolute;
+  left: 50%;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 5vh;
 }
 
 .well {
@@ -43,21 +78,71 @@ body {
 
 .page {
   padding: 0 1em;
+  padding-top: 1.5vh;
+  height: 84.5vh;
+  overflow-x: hidden;;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.sidebar {
+  width: 100%;
+  height: 100%;
+  min-width: 65vw;
+}
+
+.sidebar .head {
+  color: white;
+  padding: 0.85em;
+  text-align: left;
+  border-bottom: solid 0.1em;
+}
+
+
+.sidebar .head img {
+  width: 18vh;
+}
+
+.sidebar ul li {
+  text-align: left;
+  border-bottom: solid 0.1em white;
+  font-size: 105%;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 0.85em;
+  padding-left: 1.5em;
+  display: block;
+}
+
+.sidebar ul li:hover {
+  background: black;
 }
 
 .header {
-  background: red;
-  font-family: Helvetica;
   color: white;
-  margin-bottom: 1em;
-  box-shadow: 0px 1px 1px #333;
+  border-bottom: solid 0.1em;
 }
 .header h3 {
   padding: 0.5em;
-  font-family: Overpass-Bold;
+  font-family: Overpass;
+  font-weight: 600;
 }
 .header small {
   padding: 1em;
   padding-top: 0;
   display: block;
+}
+.header .icon {
+  display: inline-block;
+  width: 5vh;
+  height: 5vh;
+  margin: auto;
+  margin-left: 2vw;
+}
+.header .text {
+  display: inline-block;
 }

@@ -1,0 +1,7 @@
+{
+  "appid": "APP_ID",
+  "appkey": "API_KEY",
+  "connectiontag": "0.0.1",
+  "host": "https://ps-consult-na.redhat.feedhenry.com",
+  "projectid": "PROJECT_ID"
+}
